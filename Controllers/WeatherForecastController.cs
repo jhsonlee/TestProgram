@@ -11,7 +11,15 @@ namespace WebAPI.Controllers {
     public class WeatherForecastController : ControllerBase {
         private static readonly string[] Summaries = new [] {
             "Freezing",
-
+            "Bracing",
+            "Chilly",
+            "Cool",
+            "Mild",
+            "Warm",
+            "Balmy",
+            "Hot",
+            "Sweltering",
+            "Scorching"
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
@@ -24,8 +32,8 @@ namespace WebAPI.Controllers {
         public IEnumerable<WeatherForecast> Get () {
             var rng = new Random ();
             return Enumerable.Range (1, 5).Select (index => new WeatherForecast {
-
-                    TemperatureC = rng.Next (-20, 55),
+                    Date = DateTime.Now.AddMonths (index),
+                        TemperatureC = 0001,
                         Summary = Summaries[rng.Next (Summaries.Length)]
                 })
                 .ToArray ();
