@@ -33,7 +33,7 @@ namespace WebAPI.Controllers {
             var rng = new Random ();
             return Enumerable.Range (1, 5).Select (index => new WeatherForecast {
                     Date = DateTime.Now.AddMonths (index),
-                        TemperatureC = 22222,
+                        TemperatureC = 66,
                         Summary = Summaries[rng.Next (Summaries.Length)]
                 })
                 .ToArray ();
